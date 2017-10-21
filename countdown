@@ -1,0 +1,268 @@
+<html>
+<body style="margin:0; position:relative;">
+	<head>
+		<title>倒计时</title>
+		<audio src="./music/ALiCE'S EMOTiON - 桜华月想.mp3"  autoplay="autoplay" loop="loop"></audio>
+		<meta charset="UTF-8" http-equiv="Content-Type" content="text/html;">
+		<style type="text/css">
+			.background{
+				width:1920px;
+				height:1080px;
+				margin:"0";
+				padding:"0";
+			}
+			
+			.progress-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 250px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 800px; 
+				left:600px; 
+			}
+			
+			#li{
+				display:inline;
+				float:left;
+				height:50px;
+				
+			} 
+			#ul{
+			    position:absolute;
+				background-color:black;
+				width:1879px;
+				margin:0;
+				top:0;
+				left:0;
+			} 
+		   
+			.daohang{
+				color:#eee;
+				line-height:50px;
+				text-decoration:none;
+			}	
+			
+			.txt{
+				border-left:1px solid #999;
+				border-top:1px solid #999;
+				border-right:3px solid #444;
+				border-bottom:3px solid #444;
+				text-indent:2em;
+				margin: 20px;
+				background: white;
+				width: auto;
+				float: top;
+				line-height: 2.5em;
+			}
+			
+			.mianban{
+				margin:0;
+				padding:0;
+				position:absolute;
+				top:0;
+				left:0;
+			}
+			
+			.set-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:570px; 
+			}
+			
+			.start-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:770px; 
+			}
+			
+			.reset-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:1170px; 
+			}
+			
+			.stop-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:970px; 
+			}
+			
+			
+			.countdown-boundery{
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 300px;
+				height: 300px;
+				opacity:0.7;
+				position: absolute;
+				top: 350px; 
+				left:810px; 
+			}
+			
+			.input{
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 400px;
+				height: 400px;
+				opacity:0.7;
+				position: absolute;
+				top: 300px; 
+				left:760px; 
+				font-size:200px;
+			}
+			
+			.bug{
+				border: 2px solid #1ECD97;
+				position: absolute;
+				top:60px; 
+				left:40px; 
+				width:180px;
+				height:60px;
+			}
+			
+			.tips{
+				border: 2px solid red;
+				position: absolute;
+				top:140px; 
+				left:40px; 
+				width:180px;
+				height:280px;
+				color:black;
+				font-size:20px;
+				background:red;
+			}
+			
+			
+		</style>
+		
+		<script type="text/javascript">
+			var time=60;
+			var judge=1;
+			var judge1=1;
+			var cishu=1;
+			function start(){
+				if(cishu==1)
+				{
+					judge1=0;
+					cishu=0;
+					judge=1;
+					var interval=setInterval(function(){
+						if(time<=0){
+							time=time+1;
+							clearInterval(interval);
+						}	
+						if(judge==0){
+							clearInterval(interval);
+							time=time+1;
+						}
+						timer.innerHTML=time--;
+						timer.value=time;
+						},1000);
+					}
+				}
+			
+			function reset(){
+				time=0;
+				timer.value=time;
+				judge=0;
+				cishu=1;
+				judge1=1;
+			}
+			
+			function stop(){
+			    timer.value=time;
+				judge=0;
+				cishu=1;
+				judge1=1;
+			}
+			
+			function set(){
+				if(judge1==1){
+					time=document.getElementById('timer').value;
+					alert('设置成功，点击start开始'+time+'s倒计时')
+					judge=1;
+					cishu=1;
+					judge1=1;
+				}
+			}
+		</script>
+	</head>
+	<div class="mianban">
+		<img src="./imagine/lingmeng.jpg"class="background"/>
+        <ul id=ul>
+	        <li id=li><a href="index.html" class="daohang">•主页&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp¦</a></li>
+		    <li id=li><a href="countdown.html" class="daohang">•60s倒计时&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp¦</a></li>
+		    <li id=li><a href="college entrance countdown.html" class="daohang">•高考倒计时&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp¦</a></li>
+		    <li id=li><a href="custom.html" class="daohang">•自定义倒计时</a></li>
+	    </ul>
+		
+	<div>
+			<input type="text" id="timer" value="0" class="input">
+		<div>
+			<input name="button" type="button" onClick="set()" value="set" class="set-button"/ >
+			<input name="button" type="button" onClick="start()" value="start" class="start-button"/ >
+			<input name="button" type="button" onClick="reset()" value="reset" class="reset-button"/ >
+			<input name="button" type="button" onClick="stop()" value="stop" class="stop-button"/ >
+		</div>
+		
+		<div class="bug">
+			<pre>
+已知Bug：暂无；
+			</pre>
+		</div>
+		<div class="tips">
+			<pre>
+tips:
+  1在中央的文本框
+中输入数字（秒数）
+点击set设置时间
+  2之后点击start
+开始倒计时
+  3如需暂停请点击
+stop
+  4如需重新设置时
+间请点击reset
+			</pre>
+		</div>
+	</div>
+</body>
+</html>
