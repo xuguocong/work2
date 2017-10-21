@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>倒计时</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<audio src="./music/LiSA - crossing field.mp3" autoplay="autoplay" loop="loop"></audio>
+		<script type="text/javascript">
+			function enter(){
+				window.open('countdown.html','_self')
+			}
+		</script>
+		
+		
+		<style type="text/css">
+			.background{
+				position:absolute;
+				top:0;
+				left:0;
+				height:0;
+				width:1920px;
+				height:1080px;
+				margin:0;
+				padding:0;
+			}
+			
+			
+		.progress-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 600px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:660px; 
+			}
+		
+		</style>
+	</head>
+<body>
+		<img src="./imagine/asina.jpg" class="background"/>
+		<input name="button" type="button" onClick="enter()" value="点击我，进入倒计时!" class="progress-button"/ >
+</body>
+</html>
