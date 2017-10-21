@@ -1,0 +1,407 @@
+<html>
+<body margin="0">
+	<head>
+		<title>倒计时</title>
+		<audio src="./music/千本樱.mp3" autoplay="autoplay" loop="loop"></audio>
+		<meta charset="UTF-8" http-equiv="Content-Type" content="text/html;">
+		<style type="text/css">
+			.background{
+				width:1920px;
+				height:1080px;
+				margin:"0";
+				padding:"0";
+			}
+			
+			.progress-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 250px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 800px; 
+				left:600px; 
+			}
+			
+			#li{
+				display:inline;
+				float:left;
+				height:50px;
+				
+			} 
+			#ul{
+			    position:absolute;
+				background-color:black;
+				width:1879px;
+				margin:0;
+				top:0;
+				left:0;
+			} 
+		   
+			.daohang{
+				color:#eee;
+				line-height:50px;
+				text-decoration:none;
+			}	
+			
+			.txt{
+				border-left:1px solid #999;
+				border-top:1px solid #999;
+				border-right:3px solid #444;
+				border-bottom:3px solid #444;
+				text-indent:2em;
+				margin: 20px;
+				background: white;
+				width: auto;
+				float: top;
+				line-height: 2.5em;
+			}
+			
+			.mianban{
+				margin:0;
+				padding:0;
+				position:absolute;
+				top:0;
+				left:0;
+			}
+			
+			.set-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:570px; 
+			}
+			
+			.set-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:570px; 
+			}
+			
+			.start-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:770px; 
+			}
+			
+			.reset-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:1170px; 
+			}
+			
+			.stop-button {
+				display: block;
+				padding: 0;
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 180px;
+				height: 70px;
+				opacity:0.7;
+				position: absolute;
+				top: 750px; 
+				left:970px; 
+			}
+			
+			
+			.countdown-boundery{
+				border: 2px solid #1ECD97;
+				border-radius: 40px;
+				text-align: center;
+				width: 300px;
+				height: 300px;
+				opacity:0.7;
+				position: absolute;
+				top: 350px; 
+				left:810px; 
+			}
+			
+			.second-box{
+				border: 2px solid #1ECD97;
+				border-radius: 60px;
+				text-align: center;
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top:450px; 
+				left:1230px; 
+				font-size:60px;
+			}
+			
+			.day-box{
+				border: 2px solid #1ECD97;
+				border-radius: 60px;
+				text-align: center;
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top: 450px; 
+				left:450px; 
+				font-size:60px;
+			}
+			
+			.hour-box{
+				border: 2px solid #1ECD97;
+				border-radius: 60px;
+				text-align: center;
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top: 450px; 
+				left:710px; 
+				font-size:60px;
+			}
+			
+			.minute-box{
+				border: 2px solid #1ECD97;
+				border-radius: 60px;
+				text-align: center;
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top: 450px; 
+				left:970px; 
+				font-size:60px;
+			}
+			
+			.bug{
+				border: 2px solid #1ECD97;
+				position: absolute;
+				top:60px; 
+				left:40px; 
+				width:180px;
+				height:60px;
+			}
+			
+			
+			.day{
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top: 430px; 
+				left:590px; 
+				font-size:100px;
+			}
+			
+			.hour{
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top: 430px; 
+				left:850px; 
+				font-size:100px;
+			}
+			
+			.second{
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top: 430px; 
+				left:1370px; 
+				font-size:100px;
+			}
+			
+			.minute{
+				width: 120px;
+				height: 120px;
+				opacity:0.7;
+				position: absolute;
+				top: 430px; 
+				left:1110px; 
+				font-size:100px;
+			}
+			
+			.tips{
+				border: 2px solid #1ECD97;
+				position: absolute;
+				top:140px; 
+				left:40px; 
+				width:180px;
+				height:280px;
+				color:black;
+				font-size:20px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			var day;
+			var hour;
+			var minute;
+			var second;
+			var judge=1;
+			var	cishu=1;
+			var judge1=1;
+			var total=0;
+			function start(){
+				if(cishu==1)
+				{
+					judge1=0;
+					cishu=0;
+					judge=1;
+					var interval=setInterval(function(){
+						if(total<=0){
+							total=total+1;
+							clearInterval(interval);
+						}	
+						if(judge==0){
+							clearInterval(interval);
+							total=total+1;
+						}
+						second=total%60;
+						minute=parseInt(total/60%60);
+						hour=parseInt(total/60/60%24);
+						day=parseInt(total/60/60/24);
+						total--;
+						timer.innerHTML=second;
+						timer.value=second;
+						timer1.innerHTML=minute;
+						timer1.value=minute;
+						timer2.innerHTML=hour;
+						timer2.value=hour
+						timer2.innerHTML=day;
+						timer3.value=day;
+						},1000);
+					}
+			}
+				
+			function reset(){
+				second=0;
+				day=0;
+				hour=0;
+				minute=0;
+				timer.value=second;
+				timer1.value=minute;
+				timer2.value=hour;
+				timer3.value=day;
+				judge=0;
+				cishu=1;
+				judge1=1;
+			}
+			
+			function stop(){
+			    timer.value=second;
+				timer1.value=minute;
+				timer2.value=hour;
+				timer3.value=day;
+				judge=0;
+				cishu=1;
+				judge1=1;
+			}
+			
+			function set(){
+			    timer.value=second;
+				timer1.value=minute;
+				timer2.value=hour;
+				timer3.value=day;
+				judge=0;
+				cishu=1;
+				judge1=1;
+			}
+			
+			function set(){
+				if(judge1==1){
+					second=document.getElementById('timer').value;
+					minute=document.getElementById('timer1').value;
+					hour=document.getElementById('timer2').value;
+					day=document.getElementById('timer3').value;
+					total=second/1+minute*60/1+hour*3600/1+day*86400/1;
+					alert('设置成功，点击start开始'+day+'day'+hour+'hour'+minute+'minute'+second+'s'+'倒计时')
+					judge=1;
+					cishu=1;
+					judge1=1;
+				}
+			}
+		</script>
+	</head>
+	<div class="mianban">
+		<img src="./imagine/miku.jpg"class="background"/>
+        <ul id=ul>
+	        <li id=li><a href="index.html" class="daohang">•主页&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp¦</a></li>
+		    <li id=li><a href="countdown.html" class="daohang">•60s倒计时&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp¦</a></li>
+		    <li id=li><a href="college entrance countdown.html" class="daohang">•高考倒计时&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp¦</a></li>
+		    <li id=li><a href="custom.html" class="daohang">•自定义倒计时</a></li>
+	    </ul>
+	</div>
+	
+	<div>
+			<input type="text" id="timer" value="0" class="second-box">
+			<input type="text" id="timer1" value="0" class="minute-box">
+			<input type="text" id="timer2" value="0" class="hour-box">
+			<input type="text" id="timer3" value="0" class="day-box">
+		<div class="day">天</div>
+		<div class="hour">时</div>
+		<div class="minute">分</div>
+		<div class="second">秒</div>
+		<div>
+			<input name="button" type="button" onClick="start()" value="start" class="start-button"/ >
+			<input name="button" type="button" onClick="reset()" value="reset" class="reset-button"/ >
+			<input name="button" type="button" onClick="stop()" value="stop" class="stop-button"/ >
+			<input name="button" type="button" onClick="set()" value="set" class="set-button"/ >
+		</div>
+		
+		<div class="bug">
+			<pre>
+已知Bug：
+   暂无
+			</pre>
+		</div>
+		
+		<div class="tips">
+			<pre>
+tips:
+  1在中央的文本框
+中输入数字（秒数）
+点击set设置时间
+  2之后点击start
+开始倒计时
+  3如需暂停请点击
+stop
+  4如需重新设置时
+间请点击reset
+			</pre>
+		</div>
+	</div>
+</body>
+</html>
