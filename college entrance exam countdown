@@ -282,25 +282,25 @@
 					judge=1;
 					var interval=setInterval(function(){
 						if(total<=0){
-							total=total+1;
+							//total=total+1;
 							clearInterval(interval);
 						}	
 						if(judge==0){
 							clearInterval(interval);
-							total=total+1;
+							//total=total+1;
 						}
 						second=total%60;
 						minute=parseInt(total/60%60);
 						hour=parseInt(total/60/60%24);
 						day=parseInt(total/60/60/24);
 						total--;
-						timer.innerHTML=second;
+						//timer.innerHTML=second;
 						timer.value=second;
-						timer1.innerHTML=minute;
+						//timer1.innerHTML=minute;
 						timer1.value=minute;
-						timer2.innerHTML=hour;
+						//timer2.innerHTML=hour;
 						timer2.value=hour
-						timer2.innerHTML=day;
+						//timer2.innerHTML=day;
 						timer3.value=day;
 						},1000);
 					}
@@ -384,7 +384,6 @@
 		<div class="bug">
 			<pre>
 已知Bug：
-   倒计时到最后秒数停在1；
    倒计时开始有延迟；
 			</pre>
 		</div>
